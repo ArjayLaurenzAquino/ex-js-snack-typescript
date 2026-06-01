@@ -21,12 +21,14 @@ if (typeof dati === 'string') {
   console.log('Dato non supportato')
 }
 
-// snack 2
+// snack 2 + bonus
 
 type Dipendente = {
   nome: 'string',
   cognome: 'string',
   annoNascita: 'number',
   sesso: 'm' | 'f',
-  anniDiServizio: [number]
+  anniDiServizio: number[],
+  readonly emailAziendale: string,
+  contratto: 'indeterminato' | 'determinato' | 'Freelance'
 }
