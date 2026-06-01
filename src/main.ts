@@ -35,18 +35,23 @@ type Dipendente = {
 
 //snack 3
 
-type Developer = {
+type Developer = Dipendente & {
   livelloEsperienza: 'Junior' | 'Mid' | 'Senior',
   linguaggi?: string[],
   certificazioni: string[]
 }
 
-type ProjectManager = {
+type ProjectManager = Dipendente & {
   teamSize: null | number,
   budgetGestito?: number,
   stakeHolderPrincipali: string[]
 }
 
-type DipendenteDeveloper = Dipendente & Developer
+//snack 4
 
-type DipendenteProgectManager = Dipendente & ProjectManager
+type Team = {
+  nome: string,
+  progettoAttuale: null | string,
+  budget: number,
+  membri: [ProjectManager, Developer, ...Developer[]]
+}
